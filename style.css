@@ -1,0 +1,147 @@
+body {
+    background-color: #3ba1cf;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    /* cursor: url("images/cursors/bubble-arrow.png"), auto; */
+}
+
+@keyframes piplupSwimAnim {
+    from { transform: translate(130vw, 0vh); }
+    to { transform: translate(50vw, 100vh); }
+}
+
+@keyframes waveSizeAnim {
+    from { transform: scaleY(0); opacity: 0; }
+    to { transform: scaleY(1); opacity: 0.7; }
+}
+
+@keyframes rippleSizeAnim {
+    from { transform: scale(0); opacity: 0.7; }
+    to { transform: scale(1, 0.75); opacity: 0; }
+}
+
+@keyframes icebergSwayAnim {
+    from { transform: translate(-45%, -45%); }
+    to { transform: translate(-55%, -55%); }
+}
+
+#piplup {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: -1;
+    animation-name: piplupSwimAnim;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.wave {
+    transform-origin: 50% 100%;
+    animation-name: waveSizeAnim;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.ripple {
+    animation-name: rippleSizeAnim;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+#charles {
+    /* cursor: url("images/cursors/bubble-hand.png"), pointer; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#icebergContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    animation-name: icebergSwayAnim;
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#iceberg {
+    width: 100%;
+}
+
+.videoContainer {
+    position: relative;
+    overflow: hidden;
+    width: 10vw;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#piplupVideo {
+    border:none;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+.iceHole {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+}
+
+#searchForm input[type="search"] {
+    border: 2px solid #63afff;
+    border-radius: 50px;
+    padding: 0 1vw 0 2vw;
+    width: 20vw;
+    height: 2vw;
+    font-size: 1vw;
+    background-color: white;
+    background-image: url('images/searchicon.png');
+    background-position: 3% 50%; 
+    background-repeat: no-repeat;
+    background-size: 5% auto;
+}
+
+#searchForm input[type="submit"] {
+    border: 2px solid #63afff;
+    border-radius: 50px;
+    padding: 0px 1vw;
+    width: 20vw;
+    height: 2vw;
+    font-size: 1vw;
+}
+
+#searchForm label {
+    font-size: 1vw;
+}
+
+#searchForm select {
+    font-size: 1vw;
+}
+
+#searchForm input[type="checkbox"] {
+    width: 1vw;
+    height: 1vw;
+}
