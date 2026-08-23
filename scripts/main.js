@@ -29,3 +29,10 @@ searchForm.addEventListener("submit", function(event) {
     // send user to generated url
     window.location.href = googleUrl.href;
 })
+
+const word = "serendipity";
+const proxyUrl = "https://wordnik-proxy.adamstn.workers.dev";
+
+fetch(`${proxyUrl}/word.json/${word}/definitions`)
+  .then(res => res.json())
+  .then(data => console.log(data));

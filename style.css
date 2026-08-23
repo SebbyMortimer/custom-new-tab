@@ -54,11 +54,22 @@ body {
     animation-fill-mode: forwards;
 }
 
-#charles {
-    /* cursor: url("images/cursors/bubble-hand.png"), pointer; */
+/* #charles {
+    /* cursor: url("images/cursors/bubble-hand.png"), pointer;
     position: absolute;
     right: 0;
     bottom: 0;
+} */
+
+#bottom-right-container {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+}
+
+#wotd-div {
+    width: 20vw;
 }
 
 #icebergContainer {
