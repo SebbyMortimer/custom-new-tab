@@ -18,12 +18,17 @@ body {
 
 @keyframes rippleSizeAnim {
     from { transform: scale(0); opacity: 0.7; }
-    to { transform: scale(1, 0.75); opacity: 0; }
+    to { transform: scale(1, 0.8); opacity: 0; }
 }
 
 @keyframes icebergSwayAnim {
     from { transform: translate(-45%, -45%); }
     to { transform: translate(-55%, -55%); }
+}
+
+@keyframes wotdSwayAnim {
+    from { transform: translate(-5%, -5%); }
+    to { transform: translate(0%, 10%); }
 }
 
 #piplup {
@@ -89,6 +94,28 @@ body {
     width: 100%;
 }
 
+#wotd-container {
+    position: fixed;
+    right: 1vw;
+    top: 1vw;
+    animation-name: wotdSwayAnim;
+    animation-duration: 7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#wotd-div {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 0 3vw;
+    box-sizing: border-box;
+    font-family: "Times New Roman", serif;
+}
+
 .videoContainer {
     position: relative;
     overflow: hidden;
@@ -105,10 +132,13 @@ body {
 }
 
 #piplupVideo {
+    width: 25vw;
+    aspect-ratio: 16 / 9;
+    height: auto;
     border:none;
-    position: absolute;
+    /* position: absolute;
     left: 20px;
-    top: 20px;
+    top: 20px; */
     z-index: 2;
     border-radius: 10px;
 }
@@ -119,6 +149,10 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 10%;
+}
+
+#searchForm {
+    font-family: Tahoma;
 }
 
 #searchForm input[type="search"] {
@@ -145,14 +179,14 @@ body {
 }
 
 #searchForm label {
-    font-size: 1vw;
+    font-size: 0.8vw;
 }
 
 #searchForm select {
-    font-size: 1vw;
+    font-size: 0.8vw;
 }
 
 #searchForm input[type="checkbox"] {
-    width: 1vw;
-    height: 1vw;
+    width: 0.8vw;
+    height: 0.8vw;
 }

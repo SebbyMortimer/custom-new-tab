@@ -41,6 +41,7 @@ fetch(proxyUrl)
   })
   .then(data => {
     console.log("Word of the Day:", data);
+    document.getElementById("word-link").href = `https://www.wordnik.com/words/${data.word}`;
     document.getElementById("wotd-word").innerText = data.word;
     document.getElementById("wotd-def").innerText = data.definitions[0]?.text;
   })
