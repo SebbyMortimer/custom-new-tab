@@ -30,9 +30,20 @@ searchForm.addEventListener("submit", function(event) {
     window.location.href = googleUrl.href;
 })
 
-const word = "serendipity";
 const proxyUrl = "https://wordnik-proxy.adamstn.workers.dev";
 
-fetch(`${proxyUrl}/word.json/${word}/definitions`)
-  .then(res => res.json())
-  .then(data => console.log(data));
+fetch(proxyUrl)
+  .then(res => {
+    if (!res.ok) {
+      throw new Error(`Request failed: ${res.status}`);
+    }
+    return res.json();
+  })
+  .then(data => {
+    console.log("Word of the Day:", data);
+    document.getElementById("wotd-word").innerText = data.word;
+    document.getElementById("wotd-def").innerText = data.definitions[0]?.text;
+  })
+  .catch(error => {
+    console.error("Word of the Day error:", error);
+  });
